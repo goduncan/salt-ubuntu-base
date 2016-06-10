@@ -35,7 +35,7 @@ Setup Saltstack:
 service salt-minion stop
 mkdir -p /srv/salt
 cd /srv/salt/
-git clone https://github.com/goduncan/salt-base.git base
+git clone https://github.com/goduncan/salt-ubuntu-base.git base
 ```
 
 Run Saltstack
