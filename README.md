@@ -1,8 +1,20 @@
 # Readme
 
+Sets basic hardening on an Ubuntu host. Tested on 14.04 trusty.
 
 
-## Installing a masterless Saltstack Minion
+## Todo:
+
+This is a work in progress with the follow still to do:
+
+* Persist the firewall rules
+* Investigate restart daemons after config change
+* add rsyslog config
+* Investigate running as root
+* Possibly user management (currently assumes user accounts are setup)
+
+
+## Installing a masterless Minion
 
 ```
 wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
@@ -29,7 +41,7 @@ file_roots:
     - /srv/salt/base
 ```
 
-Setup Saltstack:
+Now setup the minion's directory structure:
 
 ```
 service salt-minion stop
@@ -38,16 +50,8 @@ cd /srv/salt/
 git clone https://github.com/goduncan/salt-ubuntu-base.git base
 ```
 
-Run Saltstack
+Run salt locally:
 
 ```
 salt-call --local state.highstate
 ```
-
-## Todo:
-
-* User management
-* Persist the firewall rules
-* Investigate restart daemons after config change
-* add rsyslog config
-* Investigate running as root
