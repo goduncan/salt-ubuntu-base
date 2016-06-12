@@ -8,9 +8,8 @@ Sets basic hardening on an Ubuntu host. Tested on 14.04 trusty.
 This is a work in progress with the follow still to do:
 
 * Persist the firewall rules
-* Investigate restart daemons after config change
 * Investigate running as root
-* Possibly user management (currently assumes user accounts are setup)
+
 
 
 ## Installing a masterless Minion
