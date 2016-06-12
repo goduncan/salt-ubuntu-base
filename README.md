@@ -16,42 +16,10 @@ This is a work in progress with the follow still to do:
 
 ## Installing a masterless Minion
 
-```
-wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-```
+The bash script run_salt.sh will add the salt repo to your sources, configure a basic masterless salt-minion and then clone this state and finally run salt locally. 
 
-Create /etc/apt/sources.list.d/saltstack.list and add:
+NOTE: It is never a good idea to execute someone's script on your box without review it first. Review this code first. I would also recommend validating your happy with the repo.saltstack.com gpg key.
 
 ```
-deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest trusty main
-```
-
-Install salt-minion:
-
-```
-apt-get install salt-minion
-```
-
-Create /etc/salt/minion.d/masterless.conf and add:
-
-```
-file_client: local
-file_roots:
-  base:
-    - /srv/salt/base
-```
-
-Now setup the minion's directory structure:
-
-```
-service salt-minion stop
-mkdir -p /srv/salt
-cd /srv/salt/
-git clone https://github.com/goduncan/salt-ubuntu-base.git base
-```
-
-Run salt locally:
-
-```
-salt-call --local state.highstate
+./setup_salt.sh
 ```
