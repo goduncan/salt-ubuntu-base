@@ -1,5 +1,6 @@
 iptables_config_allow_ssh:
-  iptables.append:
+  iptables:
+    - append
     - table: filter
     - chain: INPUT
     - jump: ACCEPT
@@ -9,7 +10,8 @@ iptables_config_allow_ssh:
     - proto: tcp
 
 iptables_config_allow_established:
-  iptables.append:
+  iptables:
+    - append
     - table: filter
     - chain: INPUT
     - match: state
@@ -17,14 +19,16 @@ iptables_config_allow_established:
     - jump: ACCEPT
 
 iptables_config_allow_loopback:
-  iptables.append:
+  iptables:
+    - append
     - table: filter
     - chain: INPUT
     - in-interface: lo
     - jump: ACCEPT
 
 iptables_config_default_drop:
-  iptables.set_policy:
+  iptables:
+    - set_policy
     - chain: INPUT
     - policy: DROP
 

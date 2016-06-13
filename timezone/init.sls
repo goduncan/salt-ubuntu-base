@@ -1,2 +1,3 @@
 GMT:
-  timezone.system
+  timezone:
+    - system

@@ -2,6 +2,8 @@ base:
   '*':
     - fail2ban
     - sudo
+    - sudo.createops
+    - sudo.config
     - iptables
     - iptables.config
     - ntpd
@@ -9,4 +11,4 @@ base:
     - ssh.config
     - sysdig
     - timezone
-    - sysctl
+    - sysctl.config
