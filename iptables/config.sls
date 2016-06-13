@@ -16,6 +16,13 @@ iptables_config_allow_established:
     - connstate: ESTABLISHED
     - jump: ACCEPT
 
+iptables_config_allow_loopback:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - in-interface: lo
+    - jump: ACCEPT
+
 iptables_config_default_drop:
   iptables.set_policy:
     - chain: INPUT

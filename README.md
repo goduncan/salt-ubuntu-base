@@ -7,9 +7,8 @@ Sets basic hardening on an Ubuntu host. Tested on 14.04 trusty.
 
 This is a work in progress with the follow still to do:
 
-* Persist the firewall rules
+* Persist the firewall rules (This could be done via cron job)
 * Investigate running as root
-
 
 
 ## Installing a masterless Minion
