@@ -12,3 +12,4 @@ base:
     - sysdig
     - timezone
     - sysctl.config
+    - ubuntuuser.config
