@@ -1,3 +1,3 @@
-GMT:
+UTC:
   timezone:
     - system
