@@ -13,3 +13,4 @@ base:
     - timezone
     - sysctl.config
     - ubuntuuser.config
+    - purgepackages.config
