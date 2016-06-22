@@ -36,7 +36,7 @@ It has 2 assumptions:
 
 ### Extra States
 
-A few extra states have been included which are not strictly. Classified as hardening.
+A few extra states have been included which are not strictly classified as hardening.
 
 1. fail2ban
 
