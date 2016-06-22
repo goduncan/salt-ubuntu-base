@@ -9,7 +9,6 @@ base:
     - ntpd
     - ssh
     - ssh.config
-    - sysdig
     - timezone.config
     - sysctl.config
     - ubuntuuser.config
