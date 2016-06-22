@@ -10,7 +10,7 @@ base:
     - ssh
     - ssh.config
     - sysdig
-    - timezone
+    - timezone.config
     - sysctl.config
     - ubuntuuser.config
     - purgepackages.config
