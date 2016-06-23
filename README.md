@@ -21,27 +21,27 @@ This repository is a set of Salt states that will harden an Ubuntu 14.04 server.
 
 ### Hardening States
 
-1. ssh
+#### ssh
 
 The root account should not be in general use and it should never be allowed to login into your system and this state prevents that. This state will also disable password authentication, forcing the use of ssh keys for your users.
 
-2. iptables
+#### iptables
 
 Apply firewall rules to only allow ssh traffic. (There is also a good UFW module in Salt if that is your preference).
 
-3. purgepackages
+#### purgepackages
 
 Remove any packages that are installed by default that you don't need. UFW is un-installed as my personal preference is iptables and we will manage firewall rules using Salt. Also, telnet is not a secure protocol and it's use should be discouraged.
 
-4. ubuntuuser
+#### ubuntuuser
 
 Remove the powerful password-less default user 'ubuntu' that is part of the default AWS Ubunutu AMI.
 
-5. sysctl
+#### sysctl
 
 Disable IPv6. IPv6 is enabled by default on most OSs, it's a good idea to turn it off if you don't specifically use it as it can leave you unexpectedly open.
 
-6. sudo
+#### sudo
 
 This is included as an example to add a specific group who will have sudo access.
 
@@ -50,14 +50,14 @@ This is included as an example to add a specific group who will have sudo access
 
 A few extra states have been included which are not strictly classified as hardening but are will improve your log quality.
 
-1. fail2ban
+#### fail2ban
 
 Fail2ban detects brute force attempts and other malicious activity in your logs. It is not something I would recommend putting on a production host as it can mask problems rather than address them (it can also potentially lock you out of your server). It is included here to reduce noise in your logs from bots, an alternative would be moving ssh off the default port.
 
-2. ntpd
+#### ntpd
 
 Accurate time is the key to good logs.
 
-3. timezone
+#### timezone
 
 As is a consistent timezone.
